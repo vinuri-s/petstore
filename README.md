@@ -87,15 +87,13 @@ CURL/WGET command to test the APIs once deployed
 `curl -v <url>`
 e.g. `curl -v http://localhost:8080/v1/pets`
 
-.................................................................................................................................................................................
 
-##Testing
+## Testing
 
 You can find the test cases in the [src/test](https://github.com/vinuri-s/petstore/tree/master/src/test/java/org/acme) folder. (PetResourceTest.java & PetTypeResourceTest.java)
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1a5fbb302c1d8b3249a7?action=collection%2Fimport)
 
-.................................................................................................................................................................................
 
 ## Specification examples
 
