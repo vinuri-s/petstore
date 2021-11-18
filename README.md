@@ -61,6 +61,42 @@ You can then execute your native executable with:
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
 
+Creating a Docker Image
+
+`./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true`
+
+To check built docker image
+
+`docker images`
+
+To run the docker image
+
+`docker -i --rm -p 8080:8080 vinuri/petstore:unspecified`
+Specify your relevant Image name & tag.
+
+You can check running containers with below command
+`docker ps`
+
+Then, try accessing http://localhost:8080/v1/pets
+
+## Deploying Application
+
+To deploy the demo app on a docker-compose please visit [./deploy](https://github.com/vinuri-s/petstore/blob/master/deploy/README.md)
+
+CURL/WGET command to test the APIs once deployed
+`curl -v <url>`
+e.g. `curl -v http://localhost:8080/v1/pets`
+
+.................................................................................................................................................................................
+
+##Testing
+
+You can find the test cases in the [src/test](https://github.com/vinuri-s/petstore/tree/master/src/test/java/org/acme) folder. (PetResourceTest.java & PetTypeResourceTest.java)
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1a5fbb302c1d8b3249a7?action=collection%2Fimport)
+
+.................................................................................................................................................................................
+
 ## Specification examples
 
 By default, there is always the creation of a JAX-RS application class to define the path on which the JAX-RS endpoints are available.
@@ -116,6 +152,4 @@ Allow the participation in distributed tracing of your requests through various 
 To show this capability download [Jaeger](https://www.jaegertracing.io/download/#binaries) and run ```./jaeger-all-in-one```.
 Open [http://localhost:16686/](http://localhost:16686/) to see the traces. Mind that you have to access your demo app endpoint for any traces to show on Jaeger UI.
 
-## Deploying Application
 
-To deploy the demo app on a docker-compose please visit [./deploy](https://github.com/rasika/petstore/tree/master/deploy)
