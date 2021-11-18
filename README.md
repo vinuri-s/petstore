@@ -63,19 +63,19 @@ If you want to learn more about building native executables, please consult http
 
 Creating a Docker Image
 
-`./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true`
+```./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true```
 
 To check built docker image
 
-`docker images`
+```docker images```
 
 To run the docker image
 
-`docker -i --rm -p 8080:8080 vinuri/petstore:unspecified`
+```docker -i --rm -p 8080:8080 vinuri/petstore:unspecified```
 Specify your relevant Image name & tag.
 
 You can check running containers with below command
-`docker ps`
+```docker ps```
 
 Then, try accessing http://localhost:8080/v1/pets
 
@@ -84,8 +84,8 @@ Then, try accessing http://localhost:8080/v1/pets
 To deploy the demo app on a docker-compose please visit [./deploy](https://github.com/vinuri-s/petstore/blob/master/deploy/README.md)
 
 CURL/WGET command to test the APIs once deployed
-`curl -v <url>`
-e.g. `curl -v http://localhost:8080/v1/pets`
+```curl -v <url>```
+e.g. ```curl -v http://localhost:8080/v1/pets```
 
 
 ## Testing
