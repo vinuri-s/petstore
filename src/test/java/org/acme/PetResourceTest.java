@@ -18,15 +18,27 @@ public class PetResourceTest {
           .when().get("/v1/pets")
           .then()
              .statusCode(200);
-//             .body(hasItem(
-// 		            allOf(
-//    		                hasEntry("pet_id", "1"),
-//    		                hasEntry("pet_type", "Dog"),
-//    		                hasEntry("pet_name", "Boola"),
-//    		                hasEntry("pet_age", "3")
-//    		            )
-//    		      )
-//    		 );
     }
+	
+	@Test
+	public void getPetById() {
+	  given()
+	    .when().get("/v1/pets/1")
+	    .then()
+	      .statusCode(200)
+	      .body(
+	        "petId", is(1),
+	        "petAge",is(3),
+	        "petName",is("Boola"),
+	        "petType", is("Dog")
+	      );
+	}
+	
+	@Test
+	public void getPetNotFound() {
+	  given()
+	    .when().get("/v1/pets/50")
+	    .then().statusCode(404);
+	}
 
 }
