@@ -137,7 +137,7 @@ iv. Delete a Pet type (id=2)
 
 `curl --location --request DELETE http://localhost:8080/v1/pets-types/delete/2`
 
-v. Update a Pet
+v. Update a Pet type
 
 `curl -H "Content-Type: application/json" -X PUT http://localhost:8080/v1/pets-types/3 -d "{\"petTypeType\": \"Cat\"}"`
 
