@@ -61,7 +61,7 @@ You can then execute your native executable with:
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
 
-Creating a Docker Image
+## Creating a Docker Image
 
 ```./gradlew build -Dquarkus.package.type=native -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true```
 
@@ -83,10 +83,63 @@ Then, try accessing http://localhost:8080/v1/pets
 
 To deploy the demo app on a docker-compose please visit [./deploy](https://github.com/vinuri-s/petstore/blob/master/deploy/README.md)
 
+## CURL Commands
+
 CURL/WGET command to test the APIs once deployed
 ```curl -v <url>```
 e.g. ```curl -v http://localhost:8080/v1/pets```
 
+### ◾ Pets
+
+i. Get all pets
+
+`curl --location --request GET http://localhost:8080/v1/pets`
+
+ii. Get pet by ID
+
+`curl --location --request GET http://localhost:8080/v1/pets/1`
+
+iii. Add a pet
+
+`curl -H "Content-Type: application/json" -X POST http://localhost:8080/v1/pets/add -d "{\"petAge\": \"1\",\"petId\": \"4\",\"petName\": \"Tiki\", \"petType\": \"Fish\"}"`
+
+iv. Delete a Pet
+
+`curl --location --request DELETE http://localhost:8080/v1/pets/delete/3`
+
+v. Update a Pet
+
+`curl -H "Content-Type: application/json" -X PUT http://localhost:8080/v1/pets/4 -d "{\"petAge\": \"2\",\"petName\": \"Kiki\", \"petType\": \"Fish\"}"`
+
+vi. Search pet by name
+
+`curl --location --request GET http://localhost:8080/v1/pets/name/Sudda`
+
+vii. Search pet by age
+
+`curl --location --request GET http://localhost:8080/v1/pets/age/2`
+
+### ◾ Pet Types
+
+i. Get all types
+
+`curl --location --request GET http://localhost:8080/v1/pets-types`
+
+ii. Get pet type by ID
+
+`curl --location --request GET http://localhost:8080/v1/pets-types/1`
+
+iii. Add a pet type
+
+`curl -H "Content-Type: application/json" -X POST http://localhost:8080/v1/pets-types/add -d "{\"petId\": \"4\",\"petTypeType\": \"Fish\"}"`
+
+iv. Delete a Pet type
+
+`curl --location --request DELETE http://localhost:8080/v1/pets-types/delete/2`
+
+v. Update a Pet
+
+`curl -H "Content-Type: application/json" -X PUT http://localhost:8080/v1/pets-types/3 -d "{\"petTypeType\": \"Cat\"}"`
 
 ## Testing
 
