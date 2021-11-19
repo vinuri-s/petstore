@@ -91,7 +91,7 @@ e.g. ```curl -v http://localhost:8080/v1/pets```
 ## Testing
 
 To run test suite
-`gradlew test`
+`./gradlew test `
 
 You can find the test cases in the [src/test](https://github.com/vinuri-s/petstore/tree/master/src/test/java/org/acme) folder. (PetResourceTest.java & PetTypeResourceTest.java)
 
