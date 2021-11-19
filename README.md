@@ -95,7 +95,7 @@ i. Get all pets
 
 `curl --location --request GET http://localhost:8080/v1/pets`
 
-ii. Get pet by ID
+ii. Get pet by ID (id=1)
 
 `curl --location --request GET http://localhost:8080/v1/pets/1`
 
@@ -103,11 +103,11 @@ iii. Add a pet
 
 `curl -H "Content-Type: application/json" -X POST http://localhost:8080/v1/pets/add -d "{\"petAge\": \"1\",\"petId\": \"4\",\"petName\": \"Tiki\", \"petType\": \"Fish\"}"`
 
-iv. Delete a Pet
+iv. Delete a Pet (id=3)
 
 `curl --location --request DELETE http://localhost:8080/v1/pets/delete/3`
 
-v. Update a Pet
+v. Update a Pet (id=4)
 
 `curl -H "Content-Type: application/json" -X PUT http://localhost:8080/v1/pets/4 -d "{\"petAge\": \"2\",\"petName\": \"Kiki\", \"petType\": \"Fish\"}"`
 
@@ -125,7 +125,7 @@ i. Get all types
 
 `curl --location --request GET http://localhost:8080/v1/pets-types`
 
-ii. Get pet type by ID
+ii. Get pet type by ID (id=1)
 
 `curl --location --request GET http://localhost:8080/v1/pets-types/1`
 
@@ -133,7 +133,7 @@ iii. Add a pet type
 
 `curl -H "Content-Type: application/json" -X POST http://localhost:8080/v1/pets-types/add -d "{\"petId\": \"4\",\"petTypeType\": \"Fish\"}"`
 
-iv. Delete a Pet type
+iv. Delete a Pet type (id=2)
 
 `curl --location --request DELETE http://localhost:8080/v1/pets-types/delete/2`
 
